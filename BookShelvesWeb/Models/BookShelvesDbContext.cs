@@ -16,6 +16,9 @@ namespace BookShelvesWeb.Models
             modelBuilder.Entity<Genre>().HasIndex(genre => genre.Name);
 
             modelBuilder.Entity<BookGenre>().HasKey(x => new {x.GenreId, x.BookId});
+
+            modelBuilder.Entity<Author>().HasData(new Author { Id = 1, Name = "Jane Austen" }, new Author { Id = 2,  Name = "Emily Bronte" });
+            modelBuilder.Entity<Genre>().HasData(new Genre { Id = 1, Name = "Novel" }, new Genre { Id = 2,  Name = "Poetry" });
         }
     }
 }
